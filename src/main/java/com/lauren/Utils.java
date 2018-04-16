@@ -6,13 +6,12 @@ import com.lauren.model.User;
 public class Utils {
 
 	
-	public static User convertUserDTO(User user) {
+	public static UserDTO convertUserDTO(User user) {
 		UserDTO dto = new UserDTO();
-		dto.setId(user.getId());
-		dto.setUsername(user.getPersonId());
+		dto.setUsername(user.getId());
 		dto.setPayment(user.getPayment());
 		dto.setAddress(user.getAddress());
-		return user;
+		return dto;
 	}
 	
 

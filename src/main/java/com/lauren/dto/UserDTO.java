@@ -2,7 +2,7 @@ package com.lauren.dto;
 
 public class UserDTO {
 	
-	private Integer id;
+	
 	private String username;
 	private String payment;
 	private String address;
@@ -11,13 +11,6 @@ public class UserDTO {
 		
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getUsername() {
 		return username;

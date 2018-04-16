@@ -5,9 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Home</title>
+
+
 </head>
+
 <body>
-	<div style = "text-align:center">
+	
 	<h1>Home</h1>
 	</div>
 	<input type='checkbox' id='form-switch'>
@@ -24,7 +27,8 @@
   			<input type="password" placeholder="Re Password" required>
   			<button type='submit'>Register</button>
   			<br>
-  			<label for='form-switch'>Already Signed up?Login </label>
+  			<label for='form-switch'>Already Member?Sign In Now..</label>
 		</form>
 </body>
+
 </html>

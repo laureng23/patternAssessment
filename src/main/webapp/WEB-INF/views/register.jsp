@@ -7,15 +7,19 @@
 <title>Register</title>
 </head>
 <body>
+
         <h2>Register User</h2>
         <form action="/register" method="POST" modelAttribute="registerForm">
-            <div style="width: 100px; text-align:left;">
-          
-                    Username: <input name="username" />  
+            
+                    Username: <input name="username" />
+                
+         
                     Password: <input type="password" name="password" />
-
+                
                     <input type="submit" value="Submit" />
                 </div>
+            </div>
         </form>
+    </div>
 </body>
 </html>

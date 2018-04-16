@@ -9,8 +9,7 @@ import javax.persistence.Id;
 public class User {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
-	private String personId;
+	private String id;
 	private String password;
 	private String payment;
 	private String address;
@@ -19,22 +18,14 @@ public class User {
 		
 	}
 		
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	
-	public String getPersonId() {
-		return personId;
-	}
-	
-	public void setPersonId(String personId) {
-		this.personId = personId;
-	}
-
 	public String getPassword() {
 		return password;
 	}

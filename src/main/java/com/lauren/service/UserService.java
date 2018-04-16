@@ -7,9 +7,7 @@ public interface UserService {
 
 	User getUser(String id);
 	
-	User login(String username, String password);
-	
-	boolean registerUser(String username, String password);
+	boolean registerUser(User user);
 	
 	User updateUserDetail(String username, String shippingAddress, String paymentMethod);
 	

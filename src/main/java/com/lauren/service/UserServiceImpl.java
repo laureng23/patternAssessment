@@ -9,9 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.lauren.model.User;
 import com.lauren.dao.UserDAO;
-import com.lauren.dto.UserDTO;
 import com.lauren.service.UserService;
-import com.lauren.Utils;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -27,21 +25,12 @@ public class UserServiceImpl implements UserService {
 		this.userDao = userDao;
 	}
 	
-	@Override 
-	public User login(String username, String password) {
-		User user = userDao.getUserById(username);
-		if(user!=null) {
-			if(password.equals(user.getPassword())) {
-				return Utils.convertUserDTO(user);
-			}
-		}
-		return null;
-	}
+	
 	
 	@Override
-	public boolean registerUser(String username, String password) {
+	public boolean registerUser(User user) {
 		try {
-			userDao.newUser(username, password);
+			userDao.newUser(user);
 			return true;
 		}catch(Exception e) {
 			return false;
@@ -67,6 +56,8 @@ public class UserServiceImpl implements UserService {
 		List<User> result = allUsers.stream().filter(user->!"admin".equals(user.getId())).collect(Collectors.toList());
 		return result;
 	}
+
+	
 
 	
 

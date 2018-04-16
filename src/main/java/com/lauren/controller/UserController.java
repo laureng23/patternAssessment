@@ -7,49 +7,50 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.lauren.service.UserService;
+
+import com.lauren.facadePattern.FacadeUser;
 import com.lauren.dto.UserDTO;
-import com.lauren.model.User;
 
 @Controller
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private FacadeUser facadeUser;
 	
-	
-	@RequestMapping("/home")
-	public String home() {
-		return "home";
+	public FacadeUser getFacadeUser() {
+		return facadeUser;
 	}
-	
-	
+
+	public void setFacadeUser(FacadeUser facadeUser) {
+		this.facadeUser = facadeUser;
+	}
+
 	@RequestMapping(value="/register", method = RequestMethod.GET)
-	public String register() {
+	public String home() {
 		return "register";
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
-	public String register(HttpServletRequest request,
+	public String doRegister(HttpServletRequest request,
 			@RequestParam(value="username", required=false) String username, 
 			@RequestParam(value="password", required=false) String password) {
-		if(userService.registerUser(username, password)) {
-			return "redirect:/welcome";
+		if(facadeUser.registerUser(username, password)) {
+			return "redirect:/home";
 		}else {
 			return "register";
 		}
 	}
-	
+
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String doLogin(HttpServletRequest request,
 			@RequestParam(value="username", required=false) String username, 
 			@RequestParam(value="password", required=false) String password) {
-		User user = userService.login(username, password);
-		if(user!=null) {
-			request.getSession().setAttribute("currentUser",user);
+		UserDTO dto = facadeUser.login(username, password);
+		if(dto!=null) {
+			request.getSession().setAttribute("currentUser",dto);
 			return "redirect:books";
 		}else {
-			return "redirect:home";
+			return "redirect:welcome";
 		}	
 	}
 	
@@ -62,13 +63,11 @@ public class UserController {
 			if(currentUser.getUsername().equals("admin")) {
 				return "redirect:/admin";
 			}else {
-				return "redirect:/home";
+				return "redirect:/welcome";
 			}
 		}else {
-			return "redirect:/home";
+			return "redirect:/welcome";
 		}
 	}
-
 	
 }
-
