@@ -10,12 +10,23 @@
 
         <h2>Register User</h2>
         <form action="/register" method="POST" modelAttribute="registerForm">
-            
+            <div style="width: 150px; text-align:centre;">
+                <div style="padding:20px;">
                     Username: <input name="username" />
-                
-         
+                </div>
+                <div style="padding:20px;">
+                    firstname: <input type="firstname" name="firstname" />
+                </div>
+                <div style="padding:20px;">
+                    lastname: <input type="lastname" name="lastname" />
+                </div>
+                <div style="padding:20px;">
+                    email: <input type="email" name="email" />
+                </div>
+               <div style="padding:20px;">
                     Password: <input type="password" name="password" />
-                
+                </div>
+                <div style="padding:20px;text-align:center">
                     <input type="submit" value="Submit" />
                 </div>
             </div>

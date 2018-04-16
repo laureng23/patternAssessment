@@ -8,10 +8,18 @@
 </head>
 <body>
 <h2>Admin login</h2>
-    <form action="admin/login" method="POST">
+    <form action="/admin/login" method="POST">
+        <div style="width: 100px; text-align:left;">
+            <div style="padding:10px;">
                   Username: <input name="username" />
+            </div>
+            <div style="padding:10px;">
                 	Password: <input type="password" name="password" />
+            </div>
+            <div style="padding:20px;text-align:center">
                 <input type="submit" value="Submit" />
+            </div>
+        </div>
     </form>
 </body>
 </html>

@@ -1,16 +1,19 @@
 package com.lauren.dao;
 
-
 import java.util.List;
+
 import com.lauren.model.User;
+import com.lauren.model.Order;
 
 public interface UserDAO {
 	
 	User getUserById(String id);
 	
-	void newUser(User user);
+	void addUser(User user);
 	
 	User updateUser(String username, String shippingAddress, String paymentMethod);
 	
-    List<User> getAllUser();
+    void addUserOrder(User user,Order order) ;
+    
+    List<User> getAllUsers();
 }

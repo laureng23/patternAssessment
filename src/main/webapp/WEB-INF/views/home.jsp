@@ -7,28 +7,15 @@
 <title>Home</title>
 
 
-</head>
-
 <body>
-	
-	<h1>Home</h1>
+	<div style = "text-align:center">
+	<h1>Book Store Login</h1>
 	</div>
-	<input type='checkbox' id='form-switch'>
 		<form id='login-form' action="/login" method="POST">
   			<input name="username" type="text" placeholder="Username" required>
   			<input name="password" type="password" placeholder="Password" required>
   			<button type='submit'>Login</button>
-  			<label for='form-switch'><span>Register</span></label>
-		</form>
-		
-		<form id='register-form' action="/register" method='post' modelAttribute="registerForm">
-  			<input name="username" type="text" placeholder="Username" required>
-  			<input name="password" type="password" placeholder="Password" required>
-  			<input type="password" placeholder="Re Password" required>
-  			<button type='submit'>Register</button>
-  			<br>
-  			<label for='form-switch'>Already Member?Sign In Now..</label>
+			<a href="<c:url value='/register' />">Not Registered ? Register Now</a>		
 		</form>
 </body>
-
 </html>
